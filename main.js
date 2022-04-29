@@ -1,5 +1,4 @@
 "use strict"
-/*test */
 import Storage from "./scripts/Storage.js";
 import PaintThing from "./scripts/PaintThing.js";
 import UI from "./scripts/Ui.js";
