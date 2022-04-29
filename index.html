@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--favicon-generator.org par-->
+  <link rel="apple-touch-icon" sizes="57x57" href="./assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/icons//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./assets/icons//apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/icons//apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./assets/icons//apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./assets/icons//apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./assets/icons//apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./assets/icons//android-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./assets/icons//apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons//apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./assets/icons///android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./assets/icons//favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons//favicon-16x16.png">
+  <link rel="manifest" href="./assets/icons//manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+   <!--fontawesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" 
+  integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--swiper-->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+
+  <!--styles-->
+  <link rel="stylesheet" href="./styles.css">
+  <title>Burger</title>
+</head>
+<body>
+  
+  <!--header start-->
+  <header class="header">
+
+    <a href="#" class="logo"><img src="./assets/images/logo8.png" alt="logo"></a>
+    <nav class="navbar">
+      <a class="navbar__item" href="#home" id="nav-item__home" data-id="home">home</a>
+      <a class="navbar__item" href="#reviews" id="nav-item__opiniones" data-id="reviews">opiniones</a>
+      <a class="navbar__item" href="#gallery" id="nav-item__galeria" data-id="gallery">galeria</a>
+      <a class="navbar__item productRef" href="#productos" id="nav-item__productos" data-id="productos">productos</a>
+      <a class="navbar__item" href="#contact" id="nav-item__contacto" data-id="contact">contacto</a>
+    </nav>
+    
+
+    <div class="options">
+      <button class="switch" id="switch">
+        <span><i class="fa-solid fa-sun"></i></span>
+        <span><i class="fa-solid fa-moon"></i></span>
+      </button>
+      <div id="btn-carrito" class="fa-solid fa-cart-shopping"><span class="carrito-cantidad"></span></div>
+      <div id="menu-btn-bars" class="fas fa-bars"></div>
+    </div>
+
+  </header>
+  <!--header end-->
+
+  <main>
+    <!--home start-->
+    <section class="home" id="home">
+      <div class="swiper home-slider">
+        <div class="swiper-wrapper wrapper-home">
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+    <!--home end-->
+
+    <!--reviews section start-->
+    <section class="reviews" id="reviews">
+      <h2 class="heading">Dicen de nosotros</h2>
+
+      <div class="swiper review-slider">
+        <div class="swiper-wrapper review-slider__wrapper">
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!--reviews section end-->
+
+    <!--gallery start-->
+    <section class="gallery" id="gallery">
+      <h2 class="heading">galería</h2>
+
+      <div class="swiper gallery-container">
+        <div class="swiper-wrapper wrapper-gallery"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!--gallery end-->
+
+    <!--productos start-->
+    <section class="productos" id="productos">
+      <h2 class="heading">Acá esta lo nuestro...</h2>
+
+      <div class="opciones">
+        <i class="fa-brands fa-elementor"></i>
+        <div class="container-opciones">
+          <div class="input_group">
+            <input id="input_group__input" type="text" placeholder="ingrese texto..">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+    
+          <div class="categoria-select">
+          </div>
+          
+          <div class="upDown">
+            <i class="fa-solid fa-arrow-up-wide-short"></i>
+            <i class="fa-solid fa-arrow-down-short-wide"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-prod"></div>
+    </section>
+    <!--productos end-->
+
+    <!--show-gallery start-->
+    <section class="show-gallery" id="show-gallery">
+      <i class="fa-solid fa-chevron-left"></i>
+      <i class="fa-solid fa-chevron-right"></i>
+      <i class="fas fa-times"></i>
+      <div class="container-image">
+        <img class="container-image__image" src="" alt="">
+      </div>
+    </section>
+    <!--show-gallery end-->
+
+    <!--contacto start-->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contactanos ya</h2>  
+      <!-- <di class="container"> -->
+        <div class="row">
+
+          <div class="our_contact">
+            <div class="content-mapa">
+              <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53261.48231712379!2d-70.71435544474444!3d-33.45340591520308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d0069af23abb%3A0x879d59f409ed4897!2sSantiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1648576225658!5m2!1ses!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="icons-container">
+              <div class="icon-card">
+                <i class="fa-solid fa-phone-flip"></i>
+                <h3>Llamanos:</h3>
+                <p>+569 99123456</p>
+                <p>+569 99654321</p>
+                <p>+569 99000011</p>
+              </div>
+      
+              <div class="icon-card">
+                <i class="fa-brands fa-whatsapp"></i>
+                <h3>whatsapp:</h3>
+                <p>+569 99123456</p>
+                <p>+569 99654321</p>
+                <p>+569 99000011</p>
+              </div>
+              
+              <div class="icon-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>Información:</h3>
+                <p>burger@burger.com</p>
+                <p>burger2@burger.com</p>
+                <p>burger3@burger.com</p>
+              </div>
+  
+            </div>
+          </div>
+  
+          <form class="formulario" id="formulario">
+            <div class="inputBox">
+              <span class="msjError"></span>
+              <input class="inputBox__text" type="text" name="nombre" placeholder="tu nombre..." autocomplete="off">
+            </div>
+            <div class="inputBox">
+              <span class="msjError"></span>
+              <input class="inputBox__email" type="email" name="email" placeholder="tu email..." autocomplete="off">
+            </div>
+            <div class="inputBox">
+              <span class="msjError"></span>
+              <textarea class="inputBox__textarea" type="text" name="mensaje" placeholder="tu mensaje..." cols="30" rows="10"></textarea>
+            </div>
+            <button class="btn" type="submit">enviar</button>
+          </form>
+        </div>
+     <!--  </div> -->
+    </section>
+    <!--contacto end-->
+
+    <!--cart start-->
+    <section class="cart" id="cart">
+      <i class="fas fa-times"></i>
+      <h2 class="heading">Para llevar</h2>
+  
+      <div class="content-itemCart">
+      </div>
+  
+      <div class="itemCart-totals">
+        <p class="total">Total: $<span></span></p>
+        <p class="total-items">Productos: <span></span></p>
+        <button id="solicitar" class="btn">solicitar</button>
+      </div>
+    </section>
+    <!--cart end-->
+  </main>
+
+
+  <!--loader start-->
+  <section class="loading" id="loading">
+    <img class="image__item" src="./assets/images/hamburger-1.1s-200px.svg" alt="imgLoader">
+  </section>
+    <!--loader end-->
+  
+
+  <!--footer start-->
+  <footer class="footer">
+    <div class="content-box">
+      
+      <div class="box contact-footer">
+        <div class="icon-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Santiago Centro, Santiago, Chile</p>
+        </div>
+        
+        <div class="icon-card">
+          <i class="fa-solid fa-phone-flip"></i>
+          <p>+569 99123456</p>
+          <p>+569 99654321</p>
+          <p>+569 99000011</p>
+        </div>
+
+        <div class="icon-card">
+          <i class="fa-brands fa-whatsapp"></i>
+          <p>+569 99123456</p>
+          <p>+569 99654321</p>
+          <p>+569 99000011</p>
+        </div>
+        
+        <div class="icon-card">
+          <i class="fa-solid fa-envelope"></i>
+          <p>burger@burger.com</p>
+          <p>burger2@burger.com</p>
+          <p>burger3@burger.com</p>
+        </div>
+                
+        <div class="icon-card">
+          <i class="fa-solid fa-clock"></i>
+          <p>Hora de atencion</p>
+          <p>11:00 a 22:00</p>
+        </div>
+      </div>
+
+      <div class="box share-footer">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-twitter"></i>
+      </div>
+
+      <div class="box menu-footer">
+        <a class="btn" href="#home">home</a>
+        <a class="btn" href="#about">nosotros</a>
+        <a class="btn" href="#menu">menu</a>
+        <a class="btn" href="#reviews">opiniones</a>
+        <a class="btn" href="#gallery">galeria</a>
+        <a class="btn" href="#contact">contacto</a>
+      </div>
+    </div>
+    <p class="credit"> crated by <span>mr. inib </span> | all rights reserved!</p>
+  </footer>
+  <!--footer end-->
+
+
+  <!--templates-->
+  <template id="review-item__slider">
+    <div class="swiper-slide review-slider__item">
+      <div class="superior">
+        <img class="superior__img" src="" alt="" loading="lazy">
+        <h3 class="superior__name"></h3>
+      </div>
+      <div class="inferior">
+        <div class="inferior__stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fa-solid fa-star-half"></i>
+        </div>
+        <p class="inferior__desc">
+          <i class="fas fa-quote-left"></i>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem iure, aspernatur dicta, odio quis 
+          aut alias asperiores, harum voluptatum veritatis.
+          <i class="fas fa-quote-right"></i>
+        </p>
+      </div>
+    </div>
+  </template>
+
+  <template id="show-gallery-item">
+    <div class="swiper-slide gallery-item">
+      <img class="gallery-item__image" src="" alt="" loading="lazy">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  </template>
+
+  <template id="product-template">
+    <div class="product">
+      <h3 class="title"></h3>
+      <div class="content-prod">
+        <div class="img_container">
+          <img class="img_product" src="" alt="" loading="lazy">
+        </div>
+        <div class="price"></div>
+        <div class="ingredientes">
+          <p></p>
+        </div>
+      </div>
+      <div class="icons_container">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+    </div>
+  </template>
+
+  <template id="home-slider-item">
+    <div class="swiper-slide slider" loading="lazy">
+      <div class="content">
+        <h3 class="title-home"></h3>
+        <p class="desc-home"></p>
+        <a href="#productos" class="btn">ver productos</a>
+      </div>
+    </div>
+  </template>
+
+  <template id="item-cart">
+    <div class="itemCart">
+      <div class="itemCart__data">
+        <img class="itemCart__img" src="" alt="" loading="lazy">
+        <div class="itemCart__info">
+          <h3 class="itemCart__title"></h3>
+          <p class="itemCart__price">$ <span></span></p>
+        </div>
+      </div>
+      <div class="itemCart__more">
+        <i class="fa-solid fa-plus"></i>
+        <p class="itemCart__cantidadItem"></p>
+        <i class="fa-solid fa-minus"></i>
+        <i class="fa-solid fa-trash-can"></i>
+      </div>
+    </div>
+  </template>
+
+  <!--temlates end-->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./main.js" type="module"></script>
+</body>
+</html>
