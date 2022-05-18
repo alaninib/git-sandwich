@@ -26,6 +26,7 @@ class Form{
     inputs.parentNode.querySelector(".msjError").textContent = msj;
     setTimeout(()=>{
       inputs.parentNode.querySelector(".msjError").classList.remove("active");
+      inputs.parentNode.classList.remove("error");
     }, 3000)
   }
 

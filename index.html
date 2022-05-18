@@ -70,7 +70,7 @@
     <!--home start-->
     <section class="home" id="home">
       <div class="swiper home-slider">
-        <div class="swiper-wrapper wrapper-home">
+        <div class="swiper-wrapper home-wrapper">
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -109,7 +109,7 @@
         <i class="fa-brands fa-elementor"></i>
         <div class="container-opciones">
           <div class="input_group">
-            <input id="input_group__input" type="text" placeholder="ingrese texto..">
+            <input id="search_prod" type="text" placeholder="ingrese lo que busca..">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
     
@@ -140,40 +140,15 @@
 
     <!--contacto start-->
     <section class="contact" id="contact">
-      <h2 class="heading">Contactanos ya</h2>  
+      <h2 class="heading">Contactanos...</h2>  
       <!-- <di class="container"> -->
         <div class="row">
-
-          <div class="our_contact">
-            <div class="content-mapa">
-              <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53261.48231712379!2d-70.71435544474444!3d-33.45340591520308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d0069af23abb%3A0x879d59f409ed4897!2sSantiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1648576225658!5m2!1ses!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="icons-container">
-              <div class="icon-card">
-                <i class="fa-solid fa-phone-flip"></i>
-                <h3>Llamanos:</h3>
-                <p>+569 99123456</p>
-                <p>+569 99654321</p>
-                <p>+569 99000011</p>
-              </div>
-      
-              <div class="icon-card">
-                <i class="fa-brands fa-whatsapp"></i>
-                <h3>whatsapp:</h3>
-                <p>+569 99123456</p>
-                <p>+569 99654321</p>
-                <p>+569 99000011</p>
-              </div>
-              
-              <div class="icon-card">
-                <i class="fa-solid fa-envelope"></i>
-                <h3>Información:</h3>
-                <p>burger@burger.com</p>
-                <p>burger2@burger.com</p>
-                <p>burger3@burger.com</p>
-              </div>
-  
-            </div>
+          <!-- <div class="mapa"> -->
+            <!-- <div id="map"></div> -->
+            <!-- <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.201563231821!2d-70.60857878451507!3d-33.41798900323372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf69d4854951%3A0x9a87ef2fefaad0df!2sCostanera%20Center!5e0!3m2!1ses!2scl!4v1652893577432!5m2!1ses!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+          <!-- </div> -->
+          <div class="mapa">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.201563231821!2d-70.60857878451507!3d-33.41798900323372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf69d4854951%3A0x9a87ef2fefaad0df!2sCostanera%20Center!5e0!3m2!1ses!2scl!4v1652893577432!5m2!1ses!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
   
           <form class="formulario" id="formulario">
@@ -190,6 +165,7 @@
               <textarea class="inputBox__textarea" type="text" name="mensaje" placeholder="tu mensaje..." cols="30" rows="10"></textarea>
             </div>
             <button class="btn" type="submit">enviar</button>
+            <p>todos los campos son requeridos (*).</p>
           </form>
         </div>
      <!--  </div> -->
@@ -199,7 +175,7 @@
     <!--cart start-->
     <section class="cart" id="cart">
       <i class="fas fa-times"></i>
-      <h2 class="heading">Para llevar</h2>
+      <h2 class="heading">Para llevar...</h2>
   
       <div class="content-itemCart">
       </div>
@@ -228,7 +204,7 @@
       <div class="box contact-footer">
         <div class="icon-card">
           <i class="fa-solid fa-location-dot"></i>
-          <p>Santiago Centro, Santiago, Chile</p>
+          <p>Costanera Center, Providencia, Santiago, Chile</p>
         </div>
         
         <div class="icon-card">
@@ -268,10 +244,9 @@
 
       <div class="box menu-footer">
         <a class="btn" href="#home">home</a>
-        <a class="btn" href="#about">nosotros</a>
-        <a class="btn" href="#menu">menu</a>
         <a class="btn" href="#reviews">opiniones</a>
         <a class="btn" href="#gallery">galeria</a>
+        <a class="btn" href="#productos">productos</a>
         <a class="btn" href="#contact">contacto</a>
       </div>
     </div>
@@ -331,7 +306,7 @@
   </template>
 
   <template id="home-slider-item">
-    <div class="swiper-slide slider" loading="lazy">
+    <div class="swiper-slide home-slider__item" loading="lazy">
       <div class="content">
         <h3 class="title-home"></h3>
         <p class="desc-home"></p>
@@ -359,7 +334,12 @@
   </template>
 
   <!--temlates end-->
+
+
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="./main.js" type="module"></script>
+<!--   <script
+    async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik">
+  </script> -->
 </body>
 </html>

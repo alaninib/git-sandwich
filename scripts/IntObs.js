@@ -7,11 +7,13 @@ class IntObs{
   #initialData
   #paintThing
   #ui
+  /* #map */
 
   constructor(){
     this.#initialData = null;
     this.#paintThing = null;
     this.#ui = null;
+    /* this.#map = null; */
   }
 
   setUi(ui){
@@ -26,6 +28,11 @@ class IntObs{
     this.#paintThing = paintThing
   }
 
+  //setea mapa
+/*   setMap(map){
+    this.#map = map;
+  }
+ */
   #setItemMenu(id){
     itemsNavbar.forEach(item => {
       if(item.dataset.id === id) this.#ui.setMenuItemSelected(item);
@@ -56,6 +63,7 @@ class IntObs{
           }
           if(entry.target.id === "contact"){
             this.#setItemMenu(entry.target.id);
+            /* this.#map.setInitalMapa(); */
           }
         }
       })
