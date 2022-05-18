@@ -1,7 +1,6 @@
 "use strict"
 
 const reviewSlider = document.querySelector(".review-slider");
-const servicesSlider = document.querySelector(".slider-services");
 const gallerySlider = document.querySelector(".gallery-container");
 const homeSlider = document.querySelector(".home-slider");
 
@@ -39,10 +38,10 @@ class SetSwiper{
       },
       breakpoints: {
         450: {
-          slidesPerView: 1,
+          slidesPerView: 2,
         },
         800: {
-          slidesPerView: 2,
+          slidesPerView: 3,
         },
         1000: {
           slidesPerView: 4,
@@ -73,26 +72,6 @@ class SetSwiper{
       },
       
     });
-
-    const swiperServices = new Swiper(servicesSlider,{
-      spaceBetween: 5,
-      autoplay: {
-        delay: 1500,
-        disableOnInteraction: false,
-      },      
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-        },
-        700: {
-          slidesPerView: 3,
-        },
-        1000: {
-          slidesPerView: 4,
-        }, 
-      },
-    });
-
   }
 }
 

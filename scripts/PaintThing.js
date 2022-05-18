@@ -7,7 +7,7 @@ let homeSlider = document.getElementById("home-slider-item").content;
 let itemCart = document.getElementById("item-cart").content;
 const itemContentReviewSlider = document.querySelector(".review-slider__wrapper");
 const galleyShowContainer = document.querySelector(".gallery .gallery-container .swiper-wrapper");
-const homeSliderContainer = document.querySelector(".home .home-slider .wrapper-home");
+const homeSliderContainer = document.querySelector(".home .home-slider .home-wrapper");
 const productsContainer = document.querySelector(".productos .container-prod");
 const contFilterProdA = document.querySelector(".productos .opciones .categoria-select");
 const cartItemContainer = document.querySelector(".content-itemCart");
@@ -93,9 +93,9 @@ class PaintThing{
     homeSliderContainer.classList.add("active");
     let homeImages = homeData.map(homeD => {
       let template = homeSlider.cloneNode(true);
-      template.querySelector(".slider").style.setProperty("background", `url(./assets/images/home/${homeD.img}.jpg) no-repeat`);
-      template.querySelector(".slider h3").textContent = homeD.h3;
-      template.querySelector(".slider p").textContent = homeD.parraf;
+      template.querySelector(".home-slider__item").style.setProperty("background", `url(./assets/images/home/${homeD.img}.jpg) no-repeat`);
+      template.querySelector(".home-slider__item h3").textContent = homeD.h3;
+      template.querySelector(".home-slider__item p").textContent = homeD.parraf;
       fragment.appendChild(template);
       return fragment;
     })
