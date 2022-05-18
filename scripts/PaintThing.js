@@ -6,7 +6,7 @@ let productTemplate = document.getElementById("product-template").content;
 let homeSlider = document.getElementById("home-slider-item").content;
 let itemCart = document.getElementById("item-cart").content;
 const itemContentReviewSlider = document.querySelector(".review-slider__wrapper");
-const galleyShowContainer = document.querySelector(".gallery .gallery-container .swiper-wrapper");
+const galleyShowContainer = document.querySelector(".gallery .gallery-container");
 const homeSliderContainer = document.querySelector(".home .home-slider .home-wrapper");
 const productsContainer = document.querySelector(".productos .container-prod");
 const contFilterProdA = document.querySelector(".productos .opciones .categoria-select");
@@ -17,26 +17,25 @@ class PaintThing{
 
   reviewsItemSlider(persons){
     if(itemContentReviewSlider.children.length > 0) return;
-    persons.forEach(person => {
-      let template = itemReviewSlider.cloneNode(true);
-      template.querySelector(".superior__img").setAttribute("src", person.avatar);
-      template.querySelector(".superior__name").textContent = `${person.first_name} ${person.last_name}`;
-      fragment.appendChild(template)
-    })
+      persons.forEach(person => {
+        let template = itemReviewSlider.cloneNode(true);
+        template.querySelector(".superior__img").setAttribute("src", person.avatar);
+        template.querySelector(".superior__name").textContent = `${person.first_name} ${person.last_name}`;
+        fragment.appendChild(template)
+      })
     itemContentReviewSlider.appendChild(fragment);
   }
 
   imagensToShowGallery(images){
     if(galleyShowContainer.children.length > 0) return;
-    let dataImages = images.map(image => {
-      let template = imageGalleryShow.cloneNode(true);
-      template.querySelector(".gallery-item").dataset.id = image.id;
-      template.querySelector(".gallery-item__image").src = `./assets/images/galeria/${image.name}.jpg`;
-      template.querySelector(".gallery-item__image").alt = image.name;
-      fragment.appendChild(template);
-      return fragment;
-    })
-    galleyShowContainer.appendChild(...dataImages)
+      images.forEach(image => {
+        let template = imageGalleryShow.cloneNode(true);
+        template.querySelector(".gallery-item").dataset.id = image.id;
+        template.querySelector(".gallery-item__image").src = `./assets/images/galeria/${image.name}.jpg`;
+        template.querySelector(".gallery-item__image").alt = image.name;
+        fragment.appendChild(template);
+      })
+    galleyShowContainer.appendChild(fragment);
   }
 
   products(products, type){

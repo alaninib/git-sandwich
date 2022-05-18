@@ -56,7 +56,7 @@ html{
 }
 
 body{
-  background: url(./assets/images/background6.svg);
+  background: url(./assets/images/background6.png);
   background-attachment: fixed;
   background-size: contain;
   position: relative;
@@ -89,7 +89,7 @@ body.dark::before{
 }
 
 section{
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 5rem 9%;
   box-shadow: var(--shadow-section);
 }
@@ -410,7 +410,6 @@ caso del todo con estas propiedades;*/
 
 .review-slider__item{
   padding: 2rem;
-  height: 40rem;
   box-shadow: var(--shadow-review);
   background: var(--red-rgba);
   position: relative;
@@ -480,26 +479,16 @@ caso del todo con estas propiedades;*/
 /*reviews end*/
 
 /*gallery star*/
-
 .gallery .gallery-container{
-  margin-top: 6rem;
-}
-
-.gallery .gallery-container .wrapper-gallery{
-  margin-bottom: 8rem;
+  columns: 6 32rem;
 }
 
 .gallery-item{
-  height: 40rem;
-  overflow: hidden;
   position: relative;
 }
 
-
-.gallery-item .gallery-item__image{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.gallery img{
+  max-width: 100%;
 }
 
 .gallery-item:hover .gallery-item__image{
@@ -509,8 +498,9 @@ caso del todo con estas propiedades;*/
 
 .gallery-item .fa-magnifying-glass{
   position: absolute;
-  top: -100%;
-  left: 46%;
+  top: 45%;
+  left: 45%;
+  transform: scale(0);
   padding: .3rem;
   font-size: 5rem;
   font-weight: bold;
@@ -521,10 +511,10 @@ caso del todo con estas propiedades;*/
 }
 
 .gallery-item:hover .fa-magnifying-glass{
-  top: 46%;
-  transform: translateX(-46%);
+  transform: scale(1);
   animation: scale 2s linear infinite;
-}
+} 
+
 /*gallery end*/
 
 /*show gallery start*/
@@ -605,7 +595,7 @@ caso del todo con estas propiedades;*/
 }
 
 .formulario{
-  flex: 1 1 10rem;
+  flex: 1 1 20rem;
   height: 50rem;
   background: rgba(0,0,0,.8);
   padding: 2rem;
@@ -656,11 +646,9 @@ caso del todo con estas propiedades;*/
   box-shadow: var(--shadow) var(--red);
 }
 
-
 .msjError{
   display: inline-block;
-  padding: 0.5rem;
-  width: 30%;
+  width: 8rem;
   text-align: center;
   position: absolute;
   top: 1rem;
@@ -671,12 +659,11 @@ caso del todo con estas propiedades;*/
   color: var(--white);
   background: var(--red);
   transition: all .8s ease-in-out;
-  opacity:0;
-  transform: scale(0);
+  opacity:1;
+  transform: scale(1);
 }
 
 .msjError.active{
-  top: 1.2rem;
   opacity:1;
   transform: scale(1);
 }
@@ -1137,8 +1124,8 @@ caso del todo con estas propiedades;*/
 }
 
 .image__item{
-  width: 25rem;
-  height: 25rem;
+  width: 20rem;
+  height: 20rem;
   animation: scale 1s infinite;
 }
 

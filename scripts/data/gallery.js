@@ -41,8 +41,6 @@ let gallery = [
     id:10,
     name: "g-10"
   },
-  
-/*
   {
     id:11,
     name: "g-11"
@@ -51,7 +49,6 @@ let gallery = [
     id:12,
     name: "g-12"
   },
-
   {
     id:13,
     name: "g-13"
@@ -71,47 +68,7 @@ let gallery = [
   {
     id:17,
     name: "g-17"
-  },
-  {
-    id:18,
-    name: "g-18"
-  },
-   {
-    id:19,
-    name: "g-19"
-  },
-  {
-    id:20,
-    name: "g-20"
-  },
-  {
-    id:21,
-    name: "g-21"
-  },
-  {
-    id:22,
-    name: "g-22"
-  },
-  {
-    id:23,
-    name: "g-23"
-  },
-  {
-    id:24,
-    name: "g-24"
-  },
-  {
-    id:25,
-    name: "g-25"
-  },
-  {
-    id:26,
-    name: "g-26"
-  },
-  {
-    id:27,
-    name: "g-27"
-  } */
+  }
 ];
 let galleryData;
 export default galleryData = JSON.stringify(gallery);
