@@ -49,7 +49,7 @@ class SetSwiper{
       },
     });
 
-    const swiperGallery = new Swiper(gallerySlider,{
+    /* const swiperGallery = new Swiper(gallerySlider,{
       spaceBetween: 20,
       pagination: {
         el: ".swiper-pagination",
@@ -71,7 +71,7 @@ class SetSwiper{
         disableOnInteraction: false,
       },
       
-    });
+    }); */
   }
 }
 
