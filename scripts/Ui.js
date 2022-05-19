@@ -26,28 +26,36 @@ class UI{
   constructor(){
     this.paintThing = null;
     this.storage = null;
-    this.#formulario = new Form();
-    this.#manageCart = new ManageCart();
+    this.#formulario = null;
+    this.#manageCart = null;
+  }
+
+  setManageCart(manageCart){
+    console.log(manageCart);
+    this.#manageCart = manageCart;
+  }
+
+  setForm(formulario){
+    this.#formulario = formulario;
   }
   
   setPaintThing(paintThing){
     this.paintThing = paintThing;
-    this.setPaintThingFormManageCart(paintThing);
+    /* this.setPaintThingFormManageCart(paintThing); */
   }
 
   setStorage(storage){
     this.storage = storage;
-    this.setStorageForManageCart(storage);
   }
 
-  setStorageForManageCart(storage){
+ /*  setStorageForManageCart(storage){
     this.#manageCart.setStorage(storage);
-  }
+  } */
 
-  setPaintThingFormManageCart(paintThing){
+/*   setPaintThingFormManageCart(paintThing){
     this.#manageCart.setPaintThing(paintThing);
   }
-
+ */
   fadeOutLoader(){
     setTimeout(this.#loader, 2000)
   }

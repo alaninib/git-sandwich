@@ -1,23 +1,35 @@
 "use strict"
+
+//imports de las clases
 import Storage from "./scripts/Storage.js";
 import PaintThing from "./scripts/PaintThing.js";
 import UI from "./scripts/Ui.js";
 import AllData from "./scripts/AllData.js"
 import IntObs from "./scripts/IntObs.js";
+import Form from "./scripts/form.js";
+import ManageCart from "./scripts/ManageCart.js";
 /* import Mapa from "./scripts/mapa.js"; */
 
+//instancias de las clases
 let storage = new Storage();
 let ui = new UI();
 let paintThing = new PaintThing();
 let allData = new AllData();
 let intObs = new IntObs()
+let form = new Form();
+let manageCart = new ManageCart();
 /* let mapa = new Mapa(); */
 
-ui.fadeOutLoader();
+//seteo y traspaso de clases instancias de clase para su uso;
 ui.setStorage(storage);
 ui.setPaintThing(paintThing);
+ui.setForm(form);
+ui.setManageCart(manageCart);
+manageCart.setStorage(storage);
+manageCart.setPaintThing(paintThing);
 intObs.setPaintThing(paintThing);
 intObs.setUi(ui);
+ui.fadeOutLoader();
 /* intObs.setMap(mapa); */
 
 
