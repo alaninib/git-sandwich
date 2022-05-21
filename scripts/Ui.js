@@ -63,7 +63,7 @@ class UI{
 
   uiLogic(){
     /* this.#listeners(); */
-    this.#swiper.swipersToo();
+    this.#swiper.swipersToo(); //da forma al home y reviews
     this.#cart.cartUi();
     this.#product.productUi();
     this.#gallery.galleryUi();
