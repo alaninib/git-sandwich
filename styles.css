@@ -153,7 +153,6 @@ section{
   overflow: hidden;
   z-index: 0;
   margin-top: 1rem;
-  text-transform: capitalize;
   text-align: center;
   background: transparent;
 }
@@ -494,7 +493,7 @@ caso del todo con estas propiedades;*/
 
 .gallery-item:hover .gallery-item__image{
   filter: blur(.3rem);
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 .gallery-item .fa-magnifying-glass{

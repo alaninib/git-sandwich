@@ -6,6 +6,7 @@ const loaderItem = document.getElementById("loading");
 
 class UI{
 
+  #header;
   #product;
   #cart;
   #gallery;
@@ -14,12 +15,18 @@ class UI{
   #swiper;
 
   constructor(){
+    this.#header = null;
     this.#cart = null;
     this.#contacto = null;
     this.#gallery = null;
     this.#product = null;
     this.#showGallery = null;
     this.#swiper = null;
+  }
+
+  //set de la clase Header (desde main.js) para su uso
+  setHeader(header){
+    this.#header = header;
   }
 
   //set de la clase Product (desde main.js) para su uso
@@ -62,14 +69,13 @@ class UI{
   }
 
   uiLogic(){
-    /* this.#listeners(); */
+    this.#header.headerUi();
     this.#swiper.swipersToo(); //da forma al home y reviews
     this.#cart.cartUi();
     this.#product.productUi();
     this.#gallery.galleryUi();
     this.#showGallery.showGalleryUi();
     this.#contacto.contactoUi();
-
     /* intObs.setMap(mapa); */
   }
 }

@@ -30,7 +30,6 @@ let product = new Product();
 let header = new Header();
 /* let mapa = new Mapa(); */
 
-console.log(product)
 //set y traspaso de instancias de clase para su uso;
 product.setPaintThing(paintThing);
 product.setCart(cart);
@@ -45,6 +44,7 @@ cart.setPaintThing(paintThing);
 intObs.setPaintThing(paintThing);
 intObs.setHeader(header);
 
+ui.setHeader(header);
 ui.setCart(cart);
 ui.setProduct(product);
 ui.setGallery(gallery);
