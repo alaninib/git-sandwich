@@ -481,6 +481,7 @@ caso del todo con estas propiedades;*/
 /*gallery star*/
 .gallery .gallery-container{
   columns: 6 32rem;
+  column-gap: .5rem;
 }
 
 .gallery-item{
@@ -659,8 +660,8 @@ caso del todo con estas propiedades;*/
   color: var(--white);
   background: var(--red);
   transition: all .8s ease-in-out;
-  opacity:1;
-  transform: scale(1);
+  opacity:0;
+  transform: scale(0);
 }
 
 .msjError.active{
@@ -694,10 +695,10 @@ caso del todo con estas propiedades;*/
   border-radius: 50%;
   animation: rotate 2s linear infinite forwards;
   opacity: 1;
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
-  cursor: pointer;
 }
 
 .productos .opciones .fa-elementor.desactivar{
@@ -729,6 +730,9 @@ caso del todo con estas propiedades;*/
 
 .opciones .container-opciones .input_group{
   flex: 1 1 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
   width: 100%;
 }
@@ -737,7 +741,7 @@ caso del todo con estas propiedades;*/
   width: 90%;
   padding: .5rem;
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   background: transparent;
   border-bottom: .2rem solid var(--white);
@@ -745,6 +749,7 @@ caso del todo con estas propiedades;*/
 }
 
 .opciones .container-opciones .input_group .fa-magnifying-glass{
+  text-align: right;
   font-size: 2rem;
   color: var(--white);
 }
@@ -752,7 +757,7 @@ caso del todo con estas propiedades;*/
 .opciones .container-opciones .input_group input::placeholder{
   color: var(--white);
   font-weight: bolder;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .productos .opciones .container-opciones .categoria-select{

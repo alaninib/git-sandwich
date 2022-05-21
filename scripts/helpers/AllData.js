@@ -1,8 +1,8 @@
 "use strict"
 
-import galleryData from "./data/gallery.js";
-import productsData from "./data/products.js";
-import homeData from "./data/home.js";
+import galleryData from "../data/gallery.js";
+import productsData from "../data/products.js";
+import homeData from "../data/home.js";
 
 
 class AllData{

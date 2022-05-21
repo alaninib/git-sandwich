@@ -1,7 +1,6 @@
 "use strict"
 
 const reviewSlider = document.querySelector(".review-slider");
-const gallerySlider = document.querySelector(".gallery-container");
 const homeSlider = document.querySelector(".home-slider");
 
 class SetSwiper{
@@ -48,30 +47,6 @@ class SetSwiper{
         },
       },
     });
-
-    /* const swiperGallery = new Swiper(gallerySlider,{
-      spaceBetween: 20,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        450: {
-          slidesPerView: 1,
-        },
-        800: {
-          slidesPerView: 2,
-        },
-        1000: {
-          slidesPerView: 4,
-        },
-      },
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      
-    }); */
   }
 }
 

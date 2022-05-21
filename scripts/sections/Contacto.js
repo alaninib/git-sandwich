@@ -6,9 +6,9 @@ const inputTextA = document.querySelector(".inputBox__textarea");
 const pattEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const formulario = document.getElementById("formulario");
 
-class Form{
+class Contacto{
 
-  validaInput(){
+  #validaInput(){
     if(inputName.value.trim() === "") this.#setError({inputs: inputName, msj:"Nombre inválido. "});
     else this.#setSuccess(inputName);
 
@@ -34,13 +34,29 @@ class Form{
     if(sucInput.parentNode.classList.contains("error")) sucInput.parentNode.classList.remove("error");
   }
 
-  isFormValid(){
+  #isFormValid(){
     let estado = true;
     formulario.querySelectorAll(".inputBox").forEach(item => {
       if(item.classList.contains("error")) estado = false;
     })
     return estado;
   }
+
+  #listenerContcact(){
+
+    formulario.addEventListener("submit", e => {
+      e.preventDefault();
+      this.#validaInput();
+      if(this.#isFormValid()){
+        formulario.reset();
+        alert("Muchas gracias!!, lo contactaremos en breve..")
+      };
+    })
+  }
+
+  contactoUi(){
+    this.#listenerContcact();
+  }
 }
 
-export default Form;
+export default Contacto;

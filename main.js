@@ -1,13 +1,18 @@
 "use strict"
 
 //imports de las clases
-import Storage from "./scripts/Storage.js";
-import PaintThing from "./scripts/PaintThing.js";
+import Storage from "./scripts/helpers/Storage.js";
+import PaintThing from "./scripts/helpers/PaintThing.js";
 import UI from "./scripts/Ui.js";
-import AllData from "./scripts/AllData.js"
+import AllData from "./scripts/helpers/AllData.js"
 import IntObs from "./scripts/IntObs.js";
-import Form from "./scripts/form.js";
-import ManageCart from "./scripts/ManageCart.js";
+import Contacto from "./scripts/sections/Contacto.js";
+import Cart from "./scripts/sections/Cart.js";
+import SetSwiper from "./scripts/sections/Swiper.js";// Forma el home slider y el reviews slider
+import Gallery from "./scripts/sections/Gallery.js";
+import ShowGallery from "./scripts/sections/ShowGallery.js";
+import Product from "./scripts/sections/Product.js";
+import Header from "./scripts/sections/Header.js";
 /* import Mapa from "./scripts/mapa.js"; */
 
 //instancias de las clases
@@ -16,23 +21,39 @@ let ui = new UI();
 let paintThing = new PaintThing();
 let allData = new AllData();
 let intObs = new IntObs()
-let form = new Form();
-let manageCart = new ManageCart();
+let contacto = new Contacto();
+let cart = new Cart();
+let swiper = new SetSwiper();
+let gallery = new Gallery();
+let showGallery = new ShowGallery();
+let product = new Product();
+let header = new Header();
 /* let mapa = new Mapa(); */
 
-//seteo y traspaso de clases instancias de clase para su uso;
-ui.setStorage(storage);
-ui.setPaintThing(paintThing);
-ui.setForm(form);
-ui.setManageCart(manageCart);
-manageCart.setStorage(storage);
-manageCart.setPaintThing(paintThing);
+//set y traspaso de instancias de clase para su uso;
+product.setPaintThing(paintThing);
+product.setCart(cart);
+product.setStorage(storage);
+
+gallery.setShowGallery(showGallery);
+showGallery.setPaintThing(paintThing);
+
+cart.setStorage(storage);
+cart.setPaintThing(paintThing);
+
 intObs.setPaintThing(paintThing);
-intObs.setUi(ui);
+intObs.setHeader(header);
+
+ui.setCart(cart);
+ui.setProduct(product);
+ui.setGallery(gallery);
+ui.setShowGallery(showGallery)
+ui.setContact(contacto);
+ui.setSwiper(swiper)
+
+
+//Se llama la funcion que activa el loading de inicio
 ui.fadeOutLoader();
-/* intObs.setMap(mapa); */
-
-
 
 document.addEventListener("DOMContentLoaded", e => {
   Promise.all([...allData.allData()])
