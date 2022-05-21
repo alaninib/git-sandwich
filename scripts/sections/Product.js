@@ -82,25 +82,24 @@ class Product{
       if(elem.classList.contains("input_group__input")){
         inputSeachProd.focus();
       }
-
-      document.querySelector(".select").addEventListener("change", e => {
-        if(e.target.value === "todos"){
-          this.#paintThing.products(allProd, "filter")
-        }else{
-          filterProd = allProd.filter( prod => prod.category === e.target.value);
-          this.#paintThing.products(filterProd, "filter");
-        }
-      })
-
-      filterOptionsBtn.addEventListener("click", e => {
-        navbar.querySelector(".productRef").click();
-        setTimeout(() =>{
-          filterOptionsBtn.classList.add("desactivar");
-          productos.querySelector(".opciones .container-opciones").classList.add("active")
-        } ,800)
-      })
-
     });
+
+    document.querySelector(".select").addEventListener("change", e => {
+      if(e.target.value === "todos"){
+        this.#paintThing.products(allProd, "filter")
+      }else{
+        filterProd = allProd.filter( prod => prod.category === e.target.value);
+        this.#paintThing.products(filterProd, "filter");
+      }
+    })
+
+    filterOptionsBtn.addEventListener("click", e => {
+      setTimeout(() =>{
+        filterOptionsBtn.classList.add("desactivar");
+        productos.querySelector(".opciones .container-opciones").classList.add("active")
+      }, 800)
+      navbar.querySelector(".productRef").click();//lleva la pagina a esa section;
+    })
 
 
     inputSeachProd.addEventListener("input", e => {
