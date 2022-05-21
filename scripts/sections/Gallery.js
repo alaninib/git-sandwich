@@ -17,8 +17,8 @@ class Gallery{
 
   #listenerGlaleria(){
     galleryContainer.addEventListener("click", e => {
-      if(e.target.classList.contains("fa-magnifying-glass")){
-        let imgData = this.#getImgData((e.target.dataset.id));
+      if(e.target.classList.contains("fa-magnifying-glass") || e.target.classList.contains("gallery-item__image")){
+        let imgData = this.#getImgData((e.target.parentNode.dataset.id));
         this.#showGallery.paintImgtoShow(imgData);
       }
     });
