@@ -503,7 +503,7 @@ caso del todo con estas propiedades;*/
   left: 45%;
   transform: scale(0);
   padding: .3rem;
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   color: var(--black);
   display: flex;
@@ -643,7 +643,6 @@ caso del todo con estas propiedades;*/
 .inputBox.error .inputBox__text,
 .inputBox.error .inputBox__email,
 .inputBox.error .inputBox__textarea{
-  /* border:none; */
   box-shadow: var(--shadow) var(--red);
 }
 
