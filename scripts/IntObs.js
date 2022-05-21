@@ -4,38 +4,44 @@ const itemsNavbar = document.querySelectorAll(".navbar a");
 
 class IntObs{
 
-  #initialData
-  #paintThing
-  #ui
+  #initialData;
+  #paintThing;
+  #header;
   /* #map */
 
   constructor(){
     this.#initialData = null;
     this.#paintThing = null;
-    this.#ui = null;
+    this.#header = null;
     /* this.#map = null; */
   }
 
-  setUi(ui){
-    this.#ui = ui;
+  //setea la clase Header (desde main.js) para su uso
+  setHeader(header){
+    this.#header = header;
   }
 
+  //setea la clase PaintThing (desde main.js) para su uso
+  setPaintThing(paintThing){
+    this.#paintThing = paintThing
+  }
+
+  //trae la data (desde main.js) para su uso
   setInitialData(initialData){
     this.#initialData = initialData;
   }
 
-  setPaintThing(paintThing){
-    this.#paintThing = paintThing
-  }
 
   //setea mapa
 /*   setMap(map){
     this.#map = map;
   }
  */
+
+  //activa la opción del menu navbar segun la posicion que tengo en la página
   #setItemMenu(id){
     itemsNavbar.forEach(item => {
-      if(item.dataset.id === id) this.#ui.setMenuItemSelected(item);
+      if(item.dataset.id === id) this.#header.setMenuItemSelected(item);
     })
   }
 
@@ -55,7 +61,7 @@ class IntObs{
           }
           if(entry.target.id === "gallery"){
             this.#setItemMenu(entry.target.id);
-            this.#paintThing.imagensToShowGallery(this.#initialData.gallery)
+            this.#paintThing.imagensGallery(this.#initialData.gallery)
           }
           if(entry.target.id === "productos"){
             this.#setItemMenu(entry.target.id);

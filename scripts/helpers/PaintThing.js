@@ -1,20 +1,22 @@
 "use strict"
 
-let itemReviewSlider = document.getElementById("review-item__slider").content;
-let imageGalleryShow = document.getElementById("show-gallery-item").content;
-let productTemplate = document.getElementById("product-template").content;
-let homeSlider = document.getElementById("home-slider-item").content;
-let itemCart = document.getElementById("item-cart").content;
+const itemReviewSlider = document.getElementById("review-item-template").content;
+const galleryItem = document.getElementById("gallery-item-template").content;
+const productTemplate = document.getElementById("product-item-template").content;
+const homeSlider = document.getElementById("home-item-template").content;
+const itemCart = document.getElementById("cart-item-template").content;
 const itemContentReviewSlider = document.querySelector(".review-slider__wrapper");
-const galleyShowContainer = document.querySelector(".gallery .gallery-container");
+const galleyContainer = document.querySelector(".gallery .gallery-container");
 const homeSliderContainer = document.querySelector(".home .home-slider .home-wrapper");
 const productsContainer = document.querySelector(".productos .container-prod");
 const contFilterProdA = document.querySelector(".productos .opciones .categoria-select");
 const cartItemContainer = document.querySelector(".content-itemCart");
+const showGallery = document.getElementById("show-gallery");
 let fragment = document.createDocumentFragment();
 
 class PaintThing{
 
+  //renderiza los reviews en panatalla
   reviewsItemSlider(persons){
     if(itemContentReviewSlider.children.length > 0) return;
       persons.forEach(person => {
@@ -26,19 +28,31 @@ class PaintThing{
     itemContentReviewSlider.appendChild(fragment);
   }
 
-  imagensToShowGallery(images){
-    if(galleyShowContainer.children.length > 0) return;
+  //rederiza la galeria en pantalla
+  imagensGallery(images){
+    if(galleyContainer.children.length > 0) return;
       images.forEach(image => {
-        let template = imageGalleryShow.cloneNode(true);
+        let template = galleryItem.cloneNode(true);
         template.querySelector(".gallery-item").dataset.id = image.id;
         template.querySelector(".gallery-item__image").src = `./assets/images/galeria/${image.name}.jpg`;
         template.querySelector(".gallery-item__image").alt = image.name;
+        template.querySelector(".fa-magnifying-glass").dataset.id = image.id;
         fragment.appendChild(template);
       })
-    galleyShowContainer.appendChild(fragment);
+      galleyContainer.appendChild(fragment);
   }
 
+  //rederiza la imagen a mostrar en le show-gallery
+  imgToShowGallery(imgData){
+    let {img, alt} = imgData;
+    showGallery.querySelector(".container-image__image").src = img;
+    showGallery.querySelector(".container-image__image").alt = alt;
+  }
+
+  //filtra el tipo de renderizado de productos
   products(products, type){
+    /*si la variable type trae valor es porque se estan filtrando los productos desde su panel 
+    (posterior al primer renderizado); */
     if(type === "filter"){
       productsContainer.textContent = "";
       if(!products.length) this.messaggeFilter();
@@ -46,14 +60,17 @@ class PaintThing{
         this.#addProducto(products);
       }
     }else{
+      //se renderizan los productos al llegar a esa section desde IntObs.js (el primer renderizado);
       if(productsContainer.children.length > 0) return;/*Este se ejecuta desde IntObs.js (el observer) */
       this.#addProducto(products);
     }
   }
 
+  //agrega productos al panel
   #addProducto(products){
     products.forEach(product => {
       let template = productTemplate.cloneNode(true);
+      template.querySelector(".product").dataset.id = product.id;
       template.querySelector(".product .title").textContent = product.title;
       template.querySelector(".img_product").src = `./assets/images/prod/${product.name}.png`
       template.querySelector(".img_product").alt = product.name;
@@ -65,6 +82,7 @@ class PaintThing{
     productsContainer.appendChild(fragment);
   }
 
+  //en caso de que al filtrar productos que no se encuentran
   messaggeFilter(){
     let noExiste = document.createElement("H2");
     noExiste.classList.add("heading");
@@ -72,6 +90,7 @@ class PaintThing{
     productsContainer.appendChild(noExiste);
   }
 
+  //renderiza las categorias de productos para poder filtrarlos
   setFilterProdBtn(categoriesArr){
     let select = document.createElement("SELECT");
     select.classList.add("select");
@@ -87,6 +106,7 @@ class PaintThing{
     contFilterProdA.appendChild(select);
   }
 
+  //renderiza los item para el slider del home
   homeSlider(homeData){
     if(homeSliderContainer.children.length > 0) return;
     homeSliderContainer.classList.add("active");
@@ -101,6 +121,7 @@ class PaintThing{
     homeSliderContainer.appendChild(...homeImages);
   }
 
+  //pinta los items enviados al carrito;
   paintCart(itemsCart){
     cartItemContainer.textContent = "";
     let itemsCartData = itemsCart.map(itemcart => {
